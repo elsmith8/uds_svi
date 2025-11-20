@@ -15,6 +15,12 @@ The purpose of this repo is to share code that can be used to identify FQHC's of
 * Step 3: prep_data.Rmd - Reads in the data generated during Step 2 and performs data quality checks. Recodes missing data points. Consolidates datapoints into variables defined in the map. Computes raw rates associated with each variable. Checks the variability within each datapoint to ensure all variables should be kept. The code writes the output data to the working directory.
 * Step 4: compute_svi.Rmd - Reads in the data generated during Step 3 and applies the methods described by the CDC to compute SVI at the variable, theme, and overall levels.  The code generates some visualizations to facilitate understanding of results.
 
+# Project Directory Structure
+uds_svi/
+|- data/
+|- final_code/
+|- final_data/
+
 # References
 1. Health Resources & Service Administration. (2025). Uniform Data System files for download https://www.hrsa.gov/foia/electronic-reading
 2. Centers Disease Control and Prevention (CDC)/ Agency for Toxic Substances and Disease Registry (ATSDR). (2024).
