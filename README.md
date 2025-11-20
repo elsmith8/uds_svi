@@ -17,8 +17,11 @@ The purpose of this repo is to share code that can be used to identify FQHC's of
 
 # Project Directory Structure
 uds_svi/
+
 |- data/
+
 |- final_code/
+
 |- final_data/
 
 # References
