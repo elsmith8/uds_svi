@@ -9,20 +9,29 @@ Each year, Federally-Qualified Health Centers (FQHC's) are required to submit de
 # Purpose
 The purpose of this repo is to share code that can be used to identify FQHC's of interest within a defined geographic region, extract select variables from source data, clean and prep this data for downstream use, compute the SVI, and visualize results.  Sharing this code may help researchers understand the relative risk of social needs and health disparities among patients in the panel of target health centers.
 
-# Processing Steps and Included Code
-* Step 1: id_centers.Rmd - Identifies all zip codes within a defined set of states and counties, then uses this dataset to filter UDS data to target centers in those zip codes.
-* Step 2: process_data.Rmd - Requires a user-created Excel workbook that identfies variables of interest within the UDS data for the centers identified in Step 1. This code reads in each dataset from the UDS source workbook and filters to the specified variables. The code writes the output data to the working directory.
-* Step 3: prep_data.Rmd - Reads in the data generated during Step 2 and performs data quality checks. Recodes missing data points. Consolidates datapoints into variables defined in the map. Computes raw rates associated with each variable. Checks the variability within each datapoint to ensure all variables should be kept. The code writes the output data to the working directory.
-* Step 4: compute_svi.Rmd - Reads in the data generated during Step 3 and applies the methods described by the CDC to compute SVI at the variable, theme, and overall levels.  The code generates some visualizations to facilitate understanding of results.
+# Processing Steps
+* Step 1: Environment Setup - Call packages needed for data prep and analysis
+* Step 2: Select FQHC's of interest - Identifies all zip codes within a defined set of states and counties, then uses this dataset to filter UDS data to target centers in those zip codes.
+* Step 3: Process the UDS data - Requires a user-created Excel workbook that identfies variables of interest within the UDS data for the centers identified in Step 1. This code reads in each dataset from the UDS source workbook and filters to the specified variables. The code writes the output data to the working directory.
+* Step 4: Clean and prepare the data for analysis - Reads in the data generated during Step 3 and performs data quality checks. Recodes missing data points. Consolidates datapoints into variables defined in the map. Computes raw rates associated with each variable. Checks the variability within each datapoint to ensure all variables should be kept. The code writes the output data to the working directory.
+* Step 5: Compute the SVI and analyze results - Reads in the data generated during Step 4 and applies the methods described by the CDC to compute SVI at the variable, theme, and overall levels.  The code generates some visualizations to facilitate understanding of results.
+
+# Included Files
+* h80-2023.xlsx and lal-2023.xlsx are UDS data files downloaded from the HRSA site; these were used to develop the methodology. You may download more updated files.
+* factor_map.xlsx is the workbook that you need to create which maps your desired Themes and Variables to the UDS data.
+* total_patient_mapping.png is a screenshot of the this tab required in the factor_map.xlsx workbook to show structure and content; it is included to display in the markdown output.
+* index_mapping.png is a screenshot of this tab required in the factor_map.xlsx workbook to show structure and content; it is included to display in the markdown output.
+* uds_svi_process.Rmd is the markdown file that runs all of the code and displays the output in a notebook-style format.
 
 # Project Directory Structure
 uds_svi/
 
-|- data/
-
-|- final_code/
-
-|- final_data/
+|- h80-2023.xlsx
+|- lal-2023.xlsx
+|- factor_map.xlsx
+|- total_patient_mapping.png
+|- index_mapping.png
+|- uds_svi_process.Rmd
 
 # References
 1. Health Resources & Service Administration. (2025). Uniform Data System files for download https://www.hrsa.gov/foia/electronic-reading
