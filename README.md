@@ -38,3 +38,6 @@ uds_svi/
 2. Centers Disease Control and Prevention (CDC)/ Agency for Toxic Substances and Disease Registry (ATSDR). (2024).
    * Social Vulnerability Index overview https://www.atsdr.cdc.gov/place-health/php/svi/
    * SVI Methodology Documentation https://svi.cdc.gov/map25/data/docs/SVI2020Documentation_08.05.22.pdf
+
+# Citations of this Code
+When citing this code, please use DOI 10.5281/zenodo.17988917
